@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: AI CV Checker — Arshad Ali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark"><span>AA</span></div>
+      <span class="brand-name">Arshad Ali</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="case-study.html" class="active">Case Study</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap" style="padding-top:48px;">
+
+    <section>
+      <h2>Case Study</h2>
+      <h1 class="mono" style="font-size:28px;margin-bottom:20px;">AI CV Checker</h1>
+      <p class="lede">A CV-to-job matching tool that went from a hackathon prototype that couldn't handle a file upload, to a live app real people have used and given feedback on.</p>
+    </section>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>My hackathon version of this CV tool couldn't even take a file — you had to type everything in manually. That's not how anyone actually uses a CV checker.</p>
+    </section>
+
+    <section>
+      <h2>What I Did</h2>
+      <p>A few months later I rebuilt it from scratch: real file upload (PDF, Word, plain text), an AI model comparing the CV against a job description, and ATS-style correction suggestions — missing keywords, formatting fixes. Both versions were built to learn, not to ship a finished product, but I wanted the second one to actually work end-to-end, not just demo.</p>
+    </section>
+
+    <section>
+      <h2>How It Works Now</h2>
+      <p>User uploads a CV and pastes a job description → text is extracted from the file → the extracted text plus job description is sent to an AI model for comparison → the model checks keyword/skill overlap, missing qualifications, and experience alignment → it returns a match score, a skills matrix, and improvement tips.</p>
+      <figure>
+        <img src="assets/cv_home.png" alt="CV Checker homepage showing the upload screen">
+        <figcaption>The upload screen — real deployed app, live at adcvchecker.netlify.app.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/cv_results-1.jpg" alt="CV Checker analysis results showing a 65% match score, skills matrix, and improvement tips">
+        <figcaption>Real analysis output — 65% match score, skills matrix, and specific improvement tips.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>What Came of It</h2>
+      <p>It's live at <a href="https://adcvchecker.netlify.app">adcvchecker.netlify.app</a>. I shared it with people around me for honest feedback, and my AI & Data Science course mentor specifically liked the rebuild. If I keep building this, next up is login accounts, CV templates for different applicant types, and a real-time job-data connection so it matches against live openings instead of a pasted description.</p>
+      <a href="https://github.com/sarshadad-codeee/adcvcheckerApp" class="cta secondary">View the code →</a>
+    </section>
+
+    <section>
+      <h2>Get In Touch</h2>
+      <p>Want to see how I'd rebuild something like this for you?</p>
+      <a href="contact.html" class="cta">Contact me →</a>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Arshad Ali · <a href="https://github.com/sarshadad-codeee">GitHub</a> · <a href="https://linkedin.com/in/arshad-ali-0b1b22258">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
