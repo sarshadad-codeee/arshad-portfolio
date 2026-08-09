@@ -51,6 +51,9 @@ figcaption{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc
 
 .demo-embed{width:100%;height:720px;border:1px solid var(--hair);border-radius:8px;overflow:hidden;background:var(--paper);}
 .demo-embed iframe{width:100%;height:100%;border:0;display:block;}
+.flow-diagram{margin:26px 0;}
+.flow-diagram pre{background:var(--ink);color:var(--paper);padding:20px;border-radius:8px;overflow-x:auto;font-size:12px;line-height:1.5;}
+.flow-diagram .caption{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);margin-top:10px;padding-left:14px;border-left:2px solid var(--signal);}
 
 footer{border-top:1px solid var(--hair);padding:28px 0;font-size:14px;color:var(--accent);}
 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEJ6MZTGSF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GEJ6MZTGSF');
+  </script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+
+<title>Case Study: Training Prep Agent — Arshad Ali</title>
+<meta name="description" content="How I built a real AI agent that drafts, critiques, and finalizes gas fitter training modules — deciding its own next step instead of following a fixed script.">
+<meta property="og:title" content="Case Study: Training Prep Agent — Arshad Ali">
+<meta property="og:description" content="A real AI agent that drafts, critiques, and finalizes technical training modules, deciding its own next step based on what it actually finds.">
+<meta property="og:image" content="https://arshadaliml.netlify.app/hero.png">
+<meta property="og:url" content="https://arshadaliml.netlify.app/case-study-training-agent">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark"><span>AA</span></div>
+      <span class="brand-name">Arshad Ali</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="case-study.html">Case Study</a></li>
+      <li><a href="case-study-training-agent.html" class="active">Training Agent</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap" style="padding-top:48px;">
+
+    <section>
+      <h2>Case Study</h2>
+      <h1 class="mono" style="font-size:28px;margin-bottom:20px;">Training Prep Agent</h1>
+      <p class="lede">A real AI agent that drafts, critiques, and finalizes technical training modules for gas fitter training — one that decides its own next step based on what it actually finds, instead of following a fixed script.</p>
+    </section>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>I prepare technical training modules for gas fitter skills training — theory, store collection, on-site installation, stock returns, emergency response — roughly every 4–6 weeks. Drafting one by hand in Word takes about 2 hours, and there's no built-in check on quality: no one forcing a second look for missing safety content, no consistency check against past modules.</p>
+    </section>
+
+    <section>
+      <h2>What I Did</h2>
+      <p>I built a Training Prep Agent as a Claude Project. The first version was a fixed workflow — draft, critique, revise, format, always in that exact order, regardless of what the critique actually found. The real upgrade was making it an agent: it now decides its own next step. If a critique only finds minor gaps, it revises once. If it finds something severe — like missing life-safety content — it runs a second critique-revise loop on its own, and says explicitly that it's doing so and why. If a real code or regulation reference is needed, it checks with web search instead of guessing. If something is genuinely ambiguous even after checking, it stops and asks me directly rather than finalizing a guess.</p>
+    </section>
+
+    <section>
+      <h2>How It Works Now</h2>
+      <p>I type "Run pipeline: [topic]" inside the Claude Project → it drafts a short outline and slide bullets → critiques its own draft as a skeptical instructional designer → decides whether one revision is enough or a second critique-revise loop is needed → checks Google Drive for my past training docs for consistency → verifies any real code/regulation reference via web search rather than stating an unverified number as fact → formats a final, numbered, timed training document.</p>
+    </section>
+
+    <section>
+      <h2>Real Run: What Actually Happened</h2>
+      <p>On a real run ("Installation & Use On Site"), the agent's self-critique caught two severe gaps on its own — no standalone CO-poisoning/life-safety block, and no explicit stop-work criteria for refusing to commission an unsafe installation. Per its own instructions, it ran a second critique-revise loop specifically because these were safety gaps, not polish issues, and said so explicitly.</p>
+      <p>It then searched for a real installation-practice code to replace a vague placeholder phrase, found that no fitter-level code is publicly indexed, and refused to invent one — flagging it as an open item in the final document instead. It also noticed, unprompted, that unrelated documents in my Drive used a consistent house style (header block, bilingual delivery, an ethics section), and asked whether this new module should match that style for consistency across my real course library. I hadn't instructed it to look for that.</p>
+      <div class="flow-diagram">
+<pre class="mono">
+[You type: "Run pipeline: &lt;topic&gt;"]
+              |
+              v
+        [DRAFT] — short outline + slide bullets
+              |
+              v
+        [CRITIQUE] — self-review as skeptical instructional designer
+              |
+              v
+     [DECIDE severity]
+        |               |                  |
+   minor gaps      severe gap         needs a real
+        |               |             code/reg reference
+        v               v                  |
+   [REVISE once]  [REVISE, then       [web search to verify]
+        |          CRITIQUE again]         |
+        |               |             still uncertain?
+        |               v                  |
+        |          [REVISE again]          v
+        |               |          [STOP, ask user directly]
+        '---------------'
+              |
+              v
+        [FORMAT] — numbered, timed, consistent final module
+</pre>
+        <p class="caption">The agent's actual decision logic — not a stock diagram, this is what the real Claude Project instructions define.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What Came of It</h2>
+      <p>A complete, formatted training document — six timed sections, a dedicated life-safety block added specifically because of the second critique pass, an explicit "open verification item" box instead of a guessed citation, and a 20-mark pre-test plus 30-mark post-test matching my real course house style. Every run ends with the module marked "pending review, not approved for delivery" — a deliberate guardrail, since the agent drafts and checks its own thinking, but I own the final call before anything reaches a real trainee.</p>
+      <p>Full documentation — setup instructions, real eval results, known limitations, and a narrated live demo — is in the project README.</p>
+      <a href="https://youtu.be/5U8uhiTIbHg" class="cta secondary" target="_blank" rel="noopener">Watch the demo video →</a>
+    </section>
+
+    <section>
+      <h2>Get In Touch</h2>
+      <p>Want to see how I'd build something like this for your team?</p>
+      <a href="contact.html" class="cta">Contact me →</a>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Arshad Ali · <a href="https://github.com/sarshadad-codeee">GitHub</a> · <a href="https://linkedin.com/in/arshad-ali-0b1b22258">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
