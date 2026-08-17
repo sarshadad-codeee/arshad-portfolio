@@ -1,29 +1,53 @@
-# Consistency, Not Talent / Frame, Not Upstage
+# Consistency, Not Talent — Full Deliverable
+(The Through-Line + Decide Once + Kill Your Darlings)
 
-## Part 1: What makes the site feel intentional (already in place)
+## 1. One-line claim
 
-- **Two fonts, fixed roles**: JetBrains Mono for headings, Inter for body — never mixed or swapped, so nothing feels random.
-- **A small, fixed palette**: Ink (#14171C), Paper (#FAFAF9), Signal teal (#1B7A6B), Accent (#33415C). Four colors, used consistently — the teal never appears for random decoration, only for the logo, CTAs, and links.
-- **One logo, reused everywhere**: the "AA" monogram with the terminal cursor "_" detail, same teal square, same position, across every page and now the favicon too.
+**"From hackathon prototype to live tool — real input, real output, no demo-only shortcuts."**
 
-None of this required design talent — it required deciding once and repeating it, which is the actual point of this exercise.
+## 2. Content map
 
-## Part 2: The design frames the work, it never upstages it
+All CTAs ladder to one action: emailing sarshadad@gmail.com.
 
-My real judgment call here: the site deliberately stays quiet. No gradients, no animation, no decorative flourishes competing with the actual content. The teal only shows up where it's functional — a button, a link, the logo — never as background decoration behind text. When I added the CV Checker embed and the Training Prep Agent's decision-flow diagram, I kept both visually plain (a bordered box, a monospace code block) specifically so the *content* is what a visitor's eye lands on, not the styling around it. The site's job is to prove the work is real — flashy design would actually undercut that claim, not support it.
+| Page | Sections (in order) | Named CTA |
+|---|---|---|
+| **Home** (`index.html`) | Hero (one-line claim) → The Work: AI CV Checker → The Work: Training Prep Agent | "See the full rebuild →" (CV Checker), "See how it decides →" (Training Agent) |
+| **Case Study: AI CV Checker** (`case-study.html`) | The Problem → What I Did → How It Works Now → Try It Live (embedded demo) → What Came of It → Get In Touch | "Open full app in new tab →", "View the code →", "Contact me →" |
+| **Case Study: Training Prep Agent** (`case-study-training-agent.html`) | The Problem → What I Did → How It Works Now → Real Run: What Actually Happened (with decision-flow diagram) → What Came of It → Get In Touch | "Watch the demo video →", "Contact me →" |
+| **About** (`about.html`) | Bio/background → proof statement context | "Contact me →" |
+| **Contact** (`contact.html`) | Direct email CTA | "Email me →" |
 
-## Part 3: AI image generation — judged, not just generated
+**Still need to gather** (honest, open list):
+- Usage analytics for CV Checker — no tracking on that separate app itself (portfolio site has GA4, the embedded app doesn't)
+- A mentor testimonial — mentor was unreachable for an extended period; worth re-checking now
+- A second, independent peer review specifically for the Training Prep Agent case study (currently only self-tested + one AI-assisted peer suggestion, disclosed honestly in that submission)
 
-Brief: generate several options, reject most, keep one, and know when a real screenshot beats a generated image entirely.
+## 3. Identity kit (one page)
 
-I generated 4 real candidate designs for a redesigned social-share (OG) image — a genuine gap I'd already flagged earlier ("Break Your Own Site") since my current OG image (`hero.png`, 1360×500) isn't sized correctly for social cards (ideal is ~1200×630).
+**Fonts:** JetBrains Mono (headings) + Inter (body) — two fonts, fixed roles, never mixed.
 
-**Candidate A (dark, minimal)** — On-brand colors, clean type. Rejected: badly unbalanced — all content crammed top-left, the entire bottom half is dead space. Looks unfinished, not minimal.
+**Palette (hex codes):**
+- Ink (near-black text): `#14171C`
+- Paper (near-white background): `#FAFAF9`
+- Signal (main accent, teal): `#1B7A6B`
+- Accent (secondary text/links): `#33415C`
 
-**Candidate B (paper background, bold)** — Same balance problem as A, just inverted colors. Rejected for the same reason.
+**Logo/favicon:** "AA" monogram, teal square background, white text, with a terminal cursor "_" detail — same mark used as both the nav logo and the browser favicon (16px, 32px, 180px sizes generated).
 
-**Candidate C (split panel, teal block right)** — **Selected.** Actually fills the 1200×630 frame properly instead of leaving half of it empty. The teal block anchors the monogram, the text sits clearly on the paper side, and it reads correctly even as a small thumbnail in a social feed, which is the real test for an OG image.
+**Style note (2 lines):** Monospace headings and clean sans body keep it feeling built, not decorated. The palette stays quiet — teal only appears on functional elements (links, buttons, the logo) — so real work (screenshots, live demos) stays the most colorful thing on any page.
 
-**Candidate D (busy grid background, "Click Here!" button)** — Deliberately built this one to be bad, to practice real rejection. Rejected for two genuine reasons: the tagline text overflows the canvas and gets cut off mid-word ("Trainin—"), and "Click Here!" is exactly the generic, hype-y language my whole site's identity is built to avoid ("no demo-only shortcuts").
+## 4. Final image set + rejection note
 
-**On real screenshots vs. generated images**: I didn't generate anything to replace the CV Checker case study screenshots (`cv_home.png`, `cv_results-1.jpg`) — those are real interface captures, and no generated image could serve as credible proof the tool actually works. Generated visuals are fine for brand/identity assets (like this OG image); they're the wrong tool entirely for proof-of-work evidence.
+**Real captures used (not AI stand-ins):**
+- `cv_home.png`, `cv_results-1.jpg` — real CV Checker interface screenshots, used in the case study
+- `about.jpg` — real photo, used on the About page (compressed from 1MB → 22.8KB without visible quality loss)
+
+**Generated images — judged, most rejected:**
+Generated 4 candidate designs for a redesigned social-share (OG) image (a real gap: the previous OG image, `hero.png`, was 1360×500 — wrong aspect ratio for social cards, which need ~1200×630).
+
+- **Candidate A (dark, minimal)** — Rejected: badly unbalanced, all content crammed top-left, bottom half empty. Looks unfinished.
+- **Candidate B (paper, bold)** — Rejected: same balance problem as A.
+- **Candidate C/final (split panel, teal block)** — **Selected and shipped live.** Fills the 1200×630 frame properly, reads correctly even as a small thumbnail.
+- **Candidate D (busy grid, "Click Here!")** — Deliberately built as a bad example to practice real rejection. Rejected for two genuine reasons: tagline text overflows the canvas and gets cut off mid-word, and "Click Here!" is exactly the generic, hype-y language the whole site's identity is built to avoid.
+
+The one consistent style across all generated candidates: same fonts, same 4-color palette, same monogram — so even the rejected options stayed on-brand, only their layout/balance/judgment differed.
